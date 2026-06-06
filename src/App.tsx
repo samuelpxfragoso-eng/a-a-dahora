@@ -485,35 +485,6 @@ const MenuSection = () => {
 };
 
 
-const ReviewCTASection = () => {
-  return (
-    <section className="py-16 px-6 bg-cream flex justify-center">
-      <div className="max-w-4xl w-full bg-white p-8 md:p-12 rounded-[40px] shadow-lg border border-acai/10 flex flex-col md:flex-row items-center gap-12">
-        <div className="w-full md:w-1/2 flex items-center justify-center">
-          <div className="logo-shine rounded-3xl overflow-hidden shadow-xl aspect-square w-full max-w-[300px]">
-            <img 
-              src="https://res.cloudinary.com/dnkggulhp/image/upload/v1780766408/WhatsApp_Image_2026-04-30_at_6.03.03_PM_ofatjs.jpg" 
-              alt="Avalie-nos" 
-              className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-        </div>
-        <div className="w-full md:w-1/2 text-center md:text-left">
-          <h2 className="text-4xl font-black text-acai uppercase tracking-tighter mb-4">Adorou o Açaí?</h2>
-          <p className="text-acai/70 mb-8 font-medium">Sua avaliação no Google nos ajuda a continuar servindo o melhor açaí do Francês.</p>
-          <a 
-            href="https://g.page/r/CY5AelCPBRQCEAE/review"
-            target="_blank"
-            className="bg-pistache text-white px-8 py-4 rounded-2xl font-black text-lg uppercase tracking-widest hover:bg-pistache-dark transition-all inline-flex items-center gap-2 shadow-2xl hover:-translate-y-1 active:scale-95"
-          >
-            Deixar Avaliação <Star size={20} />
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-};
 
 const Reviews = () => {
   const reviews = [
@@ -529,33 +500,32 @@ const Reviews = () => {
     <section id="avaliacoes" className="py-24 px-6 bg-acai text-white overflow-hidden relative">
       <div className="absolute top-0 right-0 w-64 h-64 bg-indigo/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-8">
-          <div className="text-center md:text-left">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-12">
+          <div className="w-full md:w-1/3">
+            <img 
+              src="https://res.cloudinary.com/dnkggulhp/image/upload/v1780766405/WhatsApp_Image_2026-04-26_at_5.42.18_PM_1_hn3joc.jpg" 
+              alt="Cliente no Açaí da Hora" 
+              className="rounded-3xl shadow-2xl skew-y-3 rotate-[-2deg] border-4 border-white/20"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <div className="text-center md:text-left md:w-2/3">
             <span className="bg-pistache text-white px-3 py-1 rounded-md font-black text-xs uppercase tracking-widest mb-4 inline-block">Prova Social</span>
             <h2 className="text-5xl md:text-7xl leading-tight uppercase font-black tracking-tighter">Quem prova, <br /><span className="text-gold italic">vira fã!</span></h2>
             <div className="bg-white/5 p-6 rounded-2xl mt-8 border border-white/10 max-w-md">
-              <p className="text-xs font-black uppercase tracking-widest text-gold mb-2">📢 Ajude o Açaí da Hora!</p>
+              <p className="text-sm font-black text-white uppercase tracking-tight mb-2">Adorou o Açaí?</p>
               <p className="text-sm text-white/70 italic">
-                Deixe seu comentário e sua foto no Google! Sua avaliação nos ajuda a crescer e levar mais qualidade para todos.
+                Sua avaliação no Google nos ajuda a continuar servindo o melhor açaí do Francês.
               </p>
             </div>
           </div>
           <div className="flex flex-col gap-4 w-full md:w-auto">
-
             <a 
-              href="https://www.google.com/search?q=Açai+da+Hora+Praia+do+Frances+avaliacoes" 
+              href="https://g.page/r/CY5AelCPBRQCECE/review"
               target="_blank"
-              className="btn-shine bg-white text-acai px-8 py-5 rounded-2xl font-black uppercase text-xs tracking-widest shadow-2xl transition-all hover:bg-gold hover:-translate-y-1 flex items-center justify-center gap-3"
+              className="btn-shine bg-pistache text-white px-8 py-5 rounded-2xl font-black uppercase text-xs tracking-widest shadow-2xl transition-all hover:bg-gold hover:-translate-y-1 flex items-center justify-center gap-3"
             >
-              Avaliar Unidade Francês
-              <ChevronRight size={18} />
-            </a>
-            <a 
-              href="https://www.google.com/search?q=Açai+da+Hora+Maceio+avaliacoes" 
-              target="_blank"
-              className="btn-shine bg-white text-acai px-8 py-5 rounded-2xl font-black uppercase text-xs tracking-widest shadow-2xl transition-all hover:bg-gold hover:-translate-y-1 flex items-center justify-center gap-3"
-            >
-              Avaliar Unidade Maceió
+              Avaliar Praia do Francês
               <ChevronRight size={18} />
             </a>
           </div>
@@ -961,7 +931,6 @@ export default function App() {
       <Hero />
       <FullWidthVideoHighlight />
       <MenuSection />
-      <ReviewCTASection />
       <Reviews />
       <FactorySection />
       <Gallery />

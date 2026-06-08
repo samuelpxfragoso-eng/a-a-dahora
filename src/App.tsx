@@ -553,6 +553,14 @@ const Reviews = () => {
               Avaliar Praia do Francês
               <ChevronRight size={18} />
             </a>
+            <a 
+              href="https://g.page/r/Cc9kZs-y0pyDEAE/review"
+              target="_blank"
+              className="btn-shine bg-pistache text-white px-8 py-5 rounded-2xl font-black uppercase text-xs tracking-widest shadow-2xl transition-all hover:bg-gold hover:-translate-y-1 flex items-center justify-center gap-3"
+            >
+              Avaliar Jatiúca
+              <ChevronRight size={18} />
+            </a>
           </div>
         </div>
 

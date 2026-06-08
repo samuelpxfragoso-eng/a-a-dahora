@@ -606,7 +606,9 @@ const Gallery = () => {
     { type: 'image', src: "https://res.cloudinary.com/dnkggulhp/image/upload/v1780766408/WhatsApp_Image_2026-05-13_at_10.12.07_PM_xcvurj.jpg" },
     { type: 'video', src: "https://res.cloudinary.com/dnkggulhp/video/upload/v1780767921/untitled_Grok_Imagine_Video_2026-06-06_02-16-51_ywuo1e.mp4" },
     { type: 'image', src: "https://res.cloudinary.com/dnkggulhp/image/upload/v1780766412/WhatsApp_Image_2026-05-13_at_10.12.20_PM_1_nkpw3d.jpg" },
-    { type: 'image', src: "https://res.cloudinary.com/dnkggulhp/image/upload/v1780766406/WhatsApp_Image_2026-04-26_at_8.23.08_PM_mzbrfl.jpg" }
+    { type: 'image', src: "https://res.cloudinary.com/dnkggulhp/image/upload/v1780766406/WhatsApp_Image_2026-04-26_at_8.23.08_PM_mzbrfl.jpg" },
+    { type: 'image', src: "https://res.cloudinary.com/dnkggulhp/image/upload/v1780936407/WhatsApp_Image_2026-06-08_at_9.07.39_AM_tnyqis.jpg" },
+    { type: 'image', src: "https://res.cloudinary.com/dnkggulhp/image/upload/v1780936407/WhatsApp_Image_2026-06-08_at_8.59.18_AM_1_vjkzk7.jpg" }
   ];
 
   const duplicatedMedia = [...media, ...media];

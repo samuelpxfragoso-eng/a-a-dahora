@@ -287,7 +287,7 @@ const FactorySection = () => {
               playsInline 
               className="w-full h-full object-cover"
             >
-              <source src="https://res.cloudinary.com/dnkggulhp/video/upload/v1780766408/SnapInsta.to_AQNPeBmVVo2UJlNhGxq2v0Hm__MR9cywzXG04v-_0AUeXqSwWomdvcv1QhVUZI-IHoyp2_T9NTdFDGchowW30WwTIbe_Bqwn1qidJE0_jm7916.mp4" type="video/mp4" />
+              <source src="https://res.cloudinary.com/dnkggulhp/video/upload/v1780935174/WhatsApp_Video_2026-06-08_at_1.07.40_PM_d7c4j2.mp4" type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-acai/10 group-hover:bg-transparent transition-colors duration-500" />
             <div className="absolute top-6 left-6 bg-gold text-acai font-black text-[10px] uppercase px-3 py-1 rounded-full shadow-lg">100% Legítimo</div>
@@ -347,9 +347,17 @@ const MenuSection = () => {
         { name: 'Super Mix', price: 'R$ 13,00 / R$ 16,00', description: 'O mix clássico que todo mundo ama.', icon: <Soup size={20} /> },
         { name: 'Acompanhamentos Grátis', price: 'Incluso', description: 'Banana, Granola, Flocos, Leite em Pó, Neston, Aveia, Amendoim, Paçoca, Ovomaltine e Sucrilhos.', icon: <Sparkles size={20} /> },
         { name: 'Pistache Premium', price: 'R$ 6,00', description: 'Pistache granulado torrado para a crocância perfeita.', featured: true, icon: <Star size={20} /> },
-        { name: 'Cremes Gourmet', price: 'R$ 5,00', description: 'Cupuaçu, Ninho, Nutella, Oreo ou Paçoca.', icon: <Cake size={20} /> },
         { name: 'Frutas (Morango/Kiwi)', price: 'R$ 4,00', description: 'Adicionais de frutas frescas picadas na hora.', icon: <Sparkles size={20} /> },
         { name: 'Extra Premium', price: 'R$ 4,00', description: 'Castaña, Leite em Pó adicional ou Leite Condensado extra.', icon: <Beef size={20} /> },
+      ]
+    },				
+    { 
+      id: 'cremes', 
+      name: '🥄 Cremes Gourmet', 
+      icon: <Cake size={18} />,
+      image: "https://res.cloudinary.com/dnkggulhp/image/upload/v1780935164/WhatsApp_Image_2026-06-08_at_1.07.40_PM_fb0yd5.jpg",
+      items: [
+        { name: 'Cremes Gourmet', price: 'R$ 5,00', description: 'Cupuaçu, Ninho, Nutella, Oreo ou Paçoca.', icon: <Cake size={20} /> },
       ]
     },
     { 

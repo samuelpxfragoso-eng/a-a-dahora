@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { 
   Instagram, 
   MapPin, 
@@ -20,11 +20,44 @@ import {
   Sandwich,
   Cake,
   Beer,
-  Droplets
+  Droplets,
+  Volume2,
+  VolumeX,
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 // --- Components ---
+
+const StandardVideo = ({ src, className, poster }: { src: string, className?: string, poster?: string }) => {
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const toggleSound = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsMuted(!isMuted);
+  };
+
+  return (
+    <div className={`relative ${className}`}>
+      <video
+        ref={videoRef}
+        src={src}
+        poster={poster}
+        autoPlay
+        loop
+        muted={isMuted}
+        playsInline
+        className="w-full h-full object-cover"
+      />
+      <button 
+        className="absolute top-4 right-4 bg-acai/50 text-white p-2 rounded-full cursor-pointer z-10 transition-colors hover:bg-acai/70"
+        onClick={toggleSound}
+      >
+        {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
+      </button>
+    </div>
+  );
+};
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -203,16 +236,10 @@ const Hero = () => {
             className="relative w-full max-w-[400px] md:max-w-[600px] aspect-[5/3] rounded-[50px] overflow-hidden shadow-2xl border-[12px] border-cream bg-acai group z-20"
           >
             {mediaItems[currentMedia].type === 'video' ? (
-              <video 
-                autoPlay 
-                muted 
-                loop 
-                playsInline 
-                className="w-full h-full object-cover"
-                key={mediaItems[currentMedia].url}
-              >
-                <source src={mediaItems[currentMedia].url} type="video/mp4" />
-              </video>
+              <StandardVideo
+                src={mediaItems[currentMedia].url}
+                className="w-full h-full"
+              />
             ) : (
               <div className="relative w-full h-full logo-shine logo-reflection">
                 <img 
@@ -243,15 +270,10 @@ const Hero = () => {
 const FullWidthVideoHighlight = () => {
   return (
     <section className="relative w-full h-[60vh] md:h-screen overflow-hidden bg-acai">
-      <video 
-        autoPlay 
-        muted 
-        loop 
-        playsInline 
-        className="absolute inset-0 w-full h-full object-cover opacity-80"
-      >
-        <source src="https://res.cloudinary.com/dnkggulhp/video/upload/v1780766412/video_Grok_00015__rsbmmk.mp4" type="video/mp4" />
-      </video>
+      <StandardVideo 
+        src="https://res.cloudinary.com/dnkggulhp/video/upload/v1780766412/video_Grok_00015__rsbmmk.mp4"
+        className="absolute inset-0 w-full h-full opacity-80"
+      />
       <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white" />
       <div className="absolute inset-0 flex items-center justify-center">
         <motion.div 
@@ -280,15 +302,10 @@ const FactorySection = () => {
            className="relative"
         >
           <div className="aspect-[9/16] max-w-[340px] mx-auto rounded-[40px] overflow-hidden shadow-2xl border-[10px] border-cream bg-acai relative group">
-            <video 
-              autoPlay 
-              muted 
-              loop 
-              playsInline 
-              className="w-full h-full object-cover"
-            >
-              <source src="https://res.cloudinary.com/dnkggulhp/video/upload/v1780935174/WhatsApp_Video_2026-06-08_at_1.07.40_PM_d7c4j2.mp4" type="video/mp4" />
-            </video>
+            <StandardVideo 
+              src="https://res.cloudinary.com/dnkggulhp/video/upload/v1780935174/WhatsApp_Video_2026-06-08_at_1.07.40_PM_d7c4j2.mp4"
+              className="w-full h-full"
+            />
             <div className="absolute inset-0 bg-acai/10 group-hover:bg-transparent transition-colors duration-500" />
             <div className="absolute top-6 left-6 bg-gold text-acai font-black text-[10px] uppercase px-3 py-1 rounded-full shadow-lg">100% Legítimo</div>
           </div>
@@ -634,13 +651,9 @@ const Gallery = () => {
                 className="relative w-[280px] md:w-[350px] aspect-[9/16] rounded-[40px] overflow-hidden shadow-xl border-4 border-white shrink-0 pointer-events-none"
               >
                 {item.type === 'video' ? (
-                  <video 
+                  <StandardVideo 
                     src={item.src} 
-                    className="w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
+                    className="w-full h-full"
                   />
                 ) : (
                   <img 

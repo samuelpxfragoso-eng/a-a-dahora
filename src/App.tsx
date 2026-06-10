@@ -600,6 +600,48 @@ const Reviews = () => {
   );
 };
 
+const FranchiseSection = () => {
+  return (
+    <section className="py-24 px-6 bg-cream">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+        <motion.div
+           initial={{ opacity: 0, scale: 0.9 }}
+           whileInView={{ opacity: 1, scale: 1 }}
+           viewport={{ once: true }}
+           className="w-full md:w-1/2"
+        >
+          <img 
+            src="https://res.cloudinary.com/dnkggulhp/image/upload/v1780766407/WhatsApp_Image_2026-04-26_at_8.23.09_PM_4_nfu1ea.jpg" 
+            alt="Franquia Açaí da Hora" 
+            className="rounded-[40px] shadow-2xl object-cover w-full h-[400px]"
+            referrerPolicy="no-referrer"
+          />
+        </motion.div>
+        <motion.div
+           initial={{ opacity: 0, x: 20 }}
+           whileInView={{ opacity: 1, x: 0 }}
+           viewport={{ once: true }}
+           className="w-full md:w-1/2"
+        >
+          <h2 className="text-5xl md:text-6xl text-acai font-black uppercase tracking-tighter mb-8 leading-tight">
+            Torne-se uma <br /><span className="text-indigo italic">Franquia ou Revendedor</span>
+          </h2>
+          <p className="text-acai/70 font-medium text-lg mb-10 leading-relaxed">
+            Leve o sucesso do <span className="font-black text-acai">Açaí da Hora</span> para sua cidade. Oferecemos suporte completo, nossa marca de qualidade e o açaí mais amado do litoral alagoano.
+          </p>
+          <a 
+            href={`https://wa.me/5582991092725?text=${encodeURIComponent("Quero saber mais sobre as franquias e revenda Açaí da Hora")}`}
+            target="_blank"
+            className="bg-[#25D366] text-white px-10 py-5 rounded-2xl font-black text-lg uppercase tracking-widest hover:bg-green-600 transition-all shadow-2xl inline-flex items-center gap-3 hover:-translate-y-1 active:scale-95 text-center"
+          >
+            <MessageCircle size={24} /> Quero saber mais
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 const Gallery = () => {
   const media = [
     { type: 'video', src: "https://res.cloudinary.com/dnkggulhp/video/upload/v1780767983/IMG_2036_vcjb0m.mov" },
@@ -965,6 +1007,7 @@ export default function App() {
       <Reviews />
       <FactorySection />
       <Gallery />
+      <FranchiseSection />
       <QuickInfoBar />
       <LocationSection />
       <FAQ />
